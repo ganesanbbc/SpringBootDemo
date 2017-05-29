@@ -5,11 +5,12 @@ import com.cts.day1.controllers.model.Product;
 import com.cts.day1.controllers.provider.ProductProvider;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class FirstController {
+
+    ProductProvider productProvider = ProductProvider.getInstance();
 
     @RequestMapping(path = "/getProducts", method = RequestMethod.GET)
     public @ResponseBody
@@ -19,12 +20,12 @@ public class FirstController {
 
 
     @RequestMapping(path = "/updateProduct", method = RequestMethod.POST)
-    public void updateItemById(@RequestBody Product product) {
+    public List<Product> updateItemById(@RequestBody Product product) {
+        return productProvider.addProduct(product);
     }
 
 
     private List<Product> getProducts() {
-        ProductProvider productProvider = ProductProvider.getInstance();
         return productProvider.getProducts();
     }
 
