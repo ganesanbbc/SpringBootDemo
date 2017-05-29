@@ -19,7 +19,7 @@ public class FirstController {
     }
 
 
-    @RequestMapping(path = "/updateProduct", method = RequestMethod.POST)
+    @RequestMapping(path = "/addProduct", method = RequestMethod.POST)
     public List<Product> updateItemById(@RequestBody Product product) {
         return productProvider.addProduct(product);
     }
