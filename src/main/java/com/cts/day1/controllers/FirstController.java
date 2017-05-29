@@ -18,6 +18,11 @@ public class FirstController {
     }
 
 
+    @RequestMapping(path = "/updateProduct", method = RequestMethod.POST)
+    public void updateItemById(@RequestBody Product product) {
+    }
+
+
     private List<Product> getProducts() {
         ProductProvider productProvider = ProductProvider.getInstance();
         return productProvider.getProducts();
