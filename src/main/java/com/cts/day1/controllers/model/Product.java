@@ -3,6 +3,9 @@ package com.cts.day1.controllers.model;
 public class Product {
     private String itemName;
 
+    public Product() {
+    }
+
     public Product(String itemName) {
         this.itemName = itemName;
     }
