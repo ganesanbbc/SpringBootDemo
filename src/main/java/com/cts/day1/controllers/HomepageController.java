@@ -15,22 +15,27 @@ import javax.validation.Valid;
 public class HomepageController extends WebMvcConfigurerAdapter {
 
 
+    public static final String INDEX_PAGE = "index";
+    public static final String TARGET_PAGE = "success";
     @Autowired
     ProductRepository respository;
 
 
     @GetMapping("/")
     public String showForm(Product product) {
-        return "index";
+        return INDEX_PAGE;
     }
 
     @PostMapping("/")
-    public String checkPersonInfo(@Valid Product product, BindingResult bindingResult) {
+    public String addProduct(@Valid Product product,
+                             BindingResult bindingResult) {
+
         if (bindingResult.hasErrors()) {
-            return "index";
+            return INDEX_PAGE;
         }
+
         respository.save(product);
-        return "success";
+        return TARGET_PAGE;
     }
 
 
