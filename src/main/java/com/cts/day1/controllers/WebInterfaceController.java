@@ -18,6 +18,7 @@ public class WebInterfaceController extends WebMvcConfigurerAdapter {
 
     public static final String INDEX_PAGE = "index";
     public static final String TARGET_PAGE = "success";
+    public static final String ROOT = "/";
 
     @Autowired
     ProductRepository respository;
@@ -28,12 +29,12 @@ public class WebInterfaceController extends WebMvcConfigurerAdapter {
 
 
 
-    @GetMapping("/")
-    public String showForm(Product product) {
+    @GetMapping(ROOT)
+    public String loadIndexPage(Product product) {
         return INDEX_PAGE;
     }
 
-    @PostMapping("/")
+    @PostMapping(ROOT)
     public String addProduct(@Valid Product product,
                              BindingResult bindingResult) {
 
