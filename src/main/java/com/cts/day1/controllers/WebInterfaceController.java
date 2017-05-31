@@ -1,7 +1,7 @@
 package com.cts.day1.controllers;
 
-import com.cts.day1.ProductService;
-import com.cts.day1.controllers.model.Product;
+import com.cts.day1.services.ProductService;
+import com.cts.day1.model.Product;
 import com.cts.day1.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.validation.Valid;
 
 @Controller
-public class HomepageController extends WebMvcConfigurerAdapter {
+public class WebInterfaceController extends WebMvcConfigurerAdapter {
 
 
     public static final String INDEX_PAGE = "index";

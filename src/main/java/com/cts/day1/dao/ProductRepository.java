@@ -1,7 +1,7 @@
 package com.cts.day1.dao;
 
 
-import com.cts.day1.controllers.model.Product;
+import com.cts.day1.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

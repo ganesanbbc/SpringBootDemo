@@ -1,4 +1,4 @@
-package com.cts.day1.controllers.model;
+package com.cts.day1.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

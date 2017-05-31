@@ -1,6 +1,6 @@
-package com.cts.day1;
+package com.cts.day1.services;
 
-import com.cts.day1.controllers.model.Product;
+import com.cts.day1.model.Product;
 import com.cts.day1.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

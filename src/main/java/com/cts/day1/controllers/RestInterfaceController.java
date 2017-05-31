@@ -1,16 +1,15 @@
 package com.cts.day1.controllers;
 
 
-import com.cts.day1.ProductService;
-import com.cts.day1.controllers.model.Product;
-import com.cts.day1.dao.ProductRepository;
+import com.cts.day1.services.ProductService;
+import com.cts.day1.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class FirstController {
+public class RestInterfaceController {
 
     @Autowired
     private ProductService productService;
