@@ -1,5 +1,6 @@
 package com.cts.day1.controllers;
 
+import com.cts.day1.ProductService;
 import com.cts.day1.controllers.model.Product;
 import com.cts.day1.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,14 @@ public class HomepageController extends WebMvcConfigurerAdapter {
 
     public static final String INDEX_PAGE = "index";
     public static final String TARGET_PAGE = "success";
+
     @Autowired
     ProductRepository respository;
+
+
+    @Autowired
+    ProductService productService;
+
 
 
     @GetMapping("/")
@@ -34,7 +41,8 @@ public class HomepageController extends WebMvcConfigurerAdapter {
             return INDEX_PAGE;
         }
 
-        respository.save(product);
+        productService.addProduct(product);
+
         return TARGET_PAGE;
     }
 

@@ -1,6 +1,7 @@
 package com.cts.day1.controllers;
 
 
+import com.cts.day1.ProductService;
 import com.cts.day1.controllers.model.Product;
 import com.cts.day1.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,19 +13,20 @@ import java.util.List;
 public class FirstController {
 
     @Autowired
-    private ProductRepository respository;
+    private ProductService productService;
 
     @RequestMapping(path = "/getProducts", method = RequestMethod.GET)
     public @ResponseBody
     List<Product> getItems() {
-        return  respository.findAll();
+
+        return productService.readAllProducts();
     }
 
 
     @RequestMapping(path = "/addProduct", method = RequestMethod.POST)
     public List<Product> updateItemById(@RequestBody Product product) {
-        respository.save(product);
-        return respository.findAll();
+        productService.addProduct(product);
+        return productService.readAllProducts();
     }
 
 
