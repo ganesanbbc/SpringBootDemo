@@ -1,14 +1,18 @@
 package com.cts.day1.controllers;
 
 
-import com.cts.day1.services.ProductServiceImple;
 import com.cts.day1.model.Product;
+import com.cts.day1.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static org.springframework.web.bind.annotation.RequestMethod.*;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 public class RestInterfaceController {
@@ -18,7 +22,7 @@ public class RestInterfaceController {
 
 
     @Autowired
-    private ProductServiceImple productService;
+    private ProductService productService;
 
     @RequestMapping(path = GET_PRODUCTS, method = GET)
     public @ResponseBody
