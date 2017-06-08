@@ -9,16 +9,16 @@ import java.util.List;
 
 
 @Service
-public class ProductServiceImple {
+public class ProductServiceImple implements ProductService {
 
     @Autowired
-    private ProductRepository respository;
+    private ProductRepository productRepository;
 
     public void addProduct(Product product) {
-        respository.save(product);
+        productRepository.save(product);
     }
 
     public List<Product> readAllProducts() {
-        return respository.findAll();
+        return productRepository.findAll();
     }
 }
