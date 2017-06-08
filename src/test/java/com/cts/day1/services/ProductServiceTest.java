@@ -33,21 +33,37 @@ public class ProductServiceTest {
     @Test
     public void thatGetAllProducts() {
 
-        int expectedSize = 1;
+        int expectedSize = 2;
         //Setup - Mock
         pushMockProducts();
 
         //Action
         List<Product> results = service.readAllProducts();
 
-        //Expectation
-        assertThat(results.size(), is(expectedSize));
+        //Output
+        int actualSize = results.size();
+        assertThat(actualSize, is(expectedSize));
 
     }
+
+
+    @Test
+    public void thatGetTheTargetedProductWhenPassingProductID() {
+
+        long expectedProductID = 2;
+        pushMockProducts();
+        Product productById = service.getProductById(expectedProductID);
+        long actualProductID = productById.getId();
+        assertThat(actualProductID, is(expectedProductID));
+
+
+    }
+
 
     private List<Product> pushMockProducts() {
         List<Product> mockData = new ArrayList<>();
         mockData.add(new Product(1l, "demo"));
+        mockData.add(new Product(2l, "demo"));
         when(productRepository.findAll()).thenReturn(mockData);
         return mockData;
     }

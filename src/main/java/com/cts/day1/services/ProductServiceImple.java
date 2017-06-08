@@ -18,6 +18,17 @@ public class ProductServiceImple implements ProductService {
         productRepository.save(product);
     }
 
+    @Override
+    public Product getProductById(long id) {
+        List<Product> products = productRepository.findAll();
+        for (Product product : products) {
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+        return null;
+    }
+
     public List<Product> readAllProducts() {
         return productRepository.findAll();
     }
