@@ -24,6 +24,7 @@ public class ProductServiceTest {
     @Mock
     private ProductRepository productRepository;
 
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -32,13 +33,23 @@ public class ProductServiceTest {
     @Test
     public void thatGetAllProducts() {
 
+        int expectedSize = 1;
+        //Setup - Mock
+        pushMockProducts();
+
+        //Action
+        List<Product> results = service.readAllProducts();
+
+        //Expectation
+        assertThat(results.size(), is(expectedSize));
+
+    }
+
+    private List<Product> pushMockProducts() {
         List<Product> mockData = new ArrayList<>();
         mockData.add(new Product(1l, "demo"));
         when(productRepository.findAll()).thenReturn(mockData);
-
-        List<Product> results = service.readAllProducts();
-        assertThat(results.size(), is(mockData.size()));
-
+        return mockData;
     }
 
 }
