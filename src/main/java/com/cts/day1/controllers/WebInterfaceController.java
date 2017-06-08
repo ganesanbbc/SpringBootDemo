@@ -1,6 +1,6 @@
 package com.cts.day1.controllers;
 
-import com.cts.day1.services.ProductService;
+import com.cts.day1.services.ProductServiceImple;
 import com.cts.day1.model.Product;
 import com.cts.day1.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class WebInterfaceController extends WebMvcConfigurerAdapter {
 
 
     @Autowired
-    ProductService productService;
+    ProductServiceImple productService;
 
 
 

@@ -1,7 +1,7 @@
 package com.cts.day1.controllers;
 
 
-import com.cts.day1.services.ProductService;
+import com.cts.day1.services.ProductServiceImple;
 import com.cts.day1.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class RestInterfaceController {
 
 
     @Autowired
-    private ProductService productService;
+    private ProductServiceImple productService;
 
     @RequestMapping(path = GET_PRODUCTS, method = GET)
     public @ResponseBody

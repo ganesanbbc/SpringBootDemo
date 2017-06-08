@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class ProductService {
+public class ProductServiceImple {
 
     @Autowired
     private ProductRepository respository;
