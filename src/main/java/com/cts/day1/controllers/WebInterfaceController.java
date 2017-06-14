@@ -2,7 +2,7 @@ package com.cts.day1.controllers;
 
 import com.cts.day1.services.ProductServiceImple;
 import com.cts.day1.model.Product;
-import com.cts.day1.dao.ProductRepository;
+import com.cts.day1.dao.ProductJPARepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -21,7 +21,7 @@ public class WebInterfaceController extends WebMvcConfigurerAdapter {
     public static final String ROOT = "/";
 
     @Autowired
-    ProductRepository respository;
+    ProductJPARepository respository;
 
 
     @Autowired

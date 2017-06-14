@@ -1,6 +1,6 @@
 package com.cts.day1.services;
 
-import com.cts.day1.dao.ProductRepository;
+import com.cts.day1.dao.ProductJPARepository;
 import com.cts.day1.model.Product;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class ProductServiceTest {
     private ProductServiceImple service;
 
     @Mock
-    private ProductRepository productRepository;
+    private ProductJPARepository productRepository;
 
 
     @Before

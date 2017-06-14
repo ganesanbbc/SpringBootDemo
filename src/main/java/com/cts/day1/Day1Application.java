@@ -1,6 +1,6 @@
 package com.cts.day1;
 
-import com.cts.day1.dao.ProductRepository;
+import com.cts.day1.dao.ProductJPARepository;
 import com.cts.day1.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class Day1Application {
     }
 
     @Bean
-    public CommandLineRunner setup(ProductRepository productRepository) {
+    public CommandLineRunner setup(ProductJPARepository productRepository) {
         return (args) -> {
             productRepository.save(new Product("product1"));
             productRepository.save(new Product("product2"));
